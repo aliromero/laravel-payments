@@ -43,7 +43,10 @@ class Zibal implements Bank
             ]);
         $response = json_decode($request->getBody()->getContents(), true);
 
-        return $response;
+        return [
+            "result" => $response['result'],
+            "msg" => $this->resultCodes($response['result']),
+        ];
 
     }
 
