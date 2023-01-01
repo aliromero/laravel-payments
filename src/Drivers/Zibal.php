@@ -23,7 +23,8 @@ class Zibal implements Bank
         }
         if ($api)
         {
-            return 'https://gateway.zibal.ir/start/' . $response['trackId'];
+            return $response;
+//            return 'https://gateway.zibal.ir/start/' . $response['trackId'];
         }
         header('Location:https://gateway.zibal.ir/start/' . $response['trackId']);exit();
     }
