@@ -2,7 +2,7 @@
 
 namespace Tests;
 
-use Abolfazlrastegar\LaravelPayments\Payments;
+use Romero\LaravelPayments\Payments;
 use PHPUnit\Framework\TestCase;
 
 class TestPayment extends TestCase

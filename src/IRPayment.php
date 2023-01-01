@@ -203,7 +203,7 @@ class IRPayment
      */
     private function makeBank ()
     {
-        $bank_class = 'Abolfazlrastegar\LaravelPayments\Drivers\\' . $this->bank_name;
+        $bank_class = 'Romero\LaravelPayments\Drivers\\' . $this->bank_name;
         if (class_exists($bank_class, true))
         {
             if (config('payments.drivers.' . $this->bank_name . '.status'))

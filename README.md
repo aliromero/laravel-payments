@@ -11,7 +11,7 @@ package laravel multi payment support form  (Zarinpal, Zibal, Idpay, Payir)
 
 ### Install package for laravel ^7
 ```bash
-composer require abolfazlrastegar/laravel-payments
+composer require aliromero/laravel-payments
 ```
 ### Publish config
 ```bash
