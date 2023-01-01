@@ -38,10 +38,12 @@ class Zibal implements Bank
     public function verify($params)
     {
         $request = Http::withHeaders($this->setHeaders())->post('https://gateway.zibal.ir/v1/verify', [
-                "merchant" => config('payments.Api_key.Zibal'),
+                "merchant" => config('payments.drivers.Zibal.key'),
                 "trackId" => $params['trackId']
             ]);
         $response = json_decode($request->getBody()->getContents(), true);
+
+
         if(isset($response['result']) && $response['result'] == 100){
             return $response;
         }
