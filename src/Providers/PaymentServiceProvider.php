@@ -2,7 +2,7 @@
 
 namespace Romero\LaravelPayments\Providers;
 
-use Abolfazlrastegar\LaravelPayments\Payments;
+use Romero\LaravelPayments\IRPayment;
 use Illuminate\Support\ServiceProvider;
 
 class PaymentServiceProvider extends ServiceProvider
@@ -10,7 +10,7 @@ class PaymentServiceProvider extends ServiceProvider
     public function register ()
     {
       $this->app->bind('payments', function () {
-            return new Payments();
+            return new IRPayment();
         });
     }
 

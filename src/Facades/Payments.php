@@ -2,7 +2,7 @@
 namespace Romero\LaravelPayments\Facades;
 use Illuminate\Support\Facades\Facade;
 
-class Payments extends Facade
+class IRPayment extends Facade
 {
     /**
      * @return string
@@ -10,6 +10,6 @@ class Payments extends Facade
 
     protected static function getFacadeAccessor()
     {
-        return 'payments';
+        return 'irpayment';
     }
 }

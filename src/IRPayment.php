@@ -2,9 +2,9 @@
 
 namespace Romero\LaravelPayments;
 
-use Abolfazlrastegar\LaravelPayments\Exception\CreateErrorMessage;
+use Romero\LaravelPayments\Exception\CreateErrorMessage;
 
-class Payments
+class IRPayment
 {
     /**
      * the name bank
