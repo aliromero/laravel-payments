@@ -44,6 +44,7 @@ class Zibal implements Bank
         $response = json_decode($request->getBody()->getContents(), true);
 
         return [
+            "data" => $response,
             "result" => $response['result'],
             "msg" => $this->resultCodes($response['result']),
         ];
@@ -60,7 +61,7 @@ class Zibal implements Bank
             "merchant"=> config('payments.Test_payment') == false ? config('payments.drivers.Zibal.key') : 'zibal',
             "callbackUrl"=> $callbackURL,
             "amount"=> config('payments.currency') == 'rtt' ? $amount * 10 : $amount,
-            "orderId"=> time(),
+            "orderId"=> $info_user['orderId'],
             "mobile"=> $info_user['mobile']
         ];
     }
