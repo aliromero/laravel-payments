@@ -1,13 +1,13 @@
 {
-    "name": "abolfazlrastegar/laravel-payments",
+    "name": "aliromero/laravel-payments",
     "description": "package multi payments for Laravel Framework.",
     "keywords": ["payment", "laravel", "zarinpal", "idpay", "payir", "zibal"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "abolfazlrastegar",
-            "email": "abolfazlrastegar1996@gmail.com"
+            "name": "ali romero",
+            "email": "ali.rom3ro@gmail.com"
         }
     ],
     "require": {
@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Abolfazlrastegar\\LaravelPayments\\": "src/"
+            "Romero\\LaravelPayments\\": "src/"
         }
     },
     "require-dev": {
@@ -29,10 +29,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Abolfazlrastegar\\LaravelPayments\\Providers\\PaymentServiceProvider"
+                "Romero\\LaravelPayments\\Providers\\PaymentServiceProvider"
             ],
             "aliases": {
-                "Payments": "Abolfazlrastegar\\LaravelPayments\\Facades\\Payments"
+                "Payments": "Romero\\LaravelPayments\\Facades\\Payments"
             }
         }
     }
