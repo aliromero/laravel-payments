@@ -1,6 +1,6 @@
 <?php
 
-namespace Abolfazlrastegar\LaravelPayments\Exception;
+namespace Romero\LaravelPayments\Exception;
 use Exception;
 class CreateErrorMessage extends Exception
 {

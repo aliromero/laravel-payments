@@ -1,6 +1,6 @@
 <?php
 
-namespace abolfazlrastegar\LaravelPayments\Providers;
+namespace Romero\LaravelPayments\Providers;
 
 use Abolfazlrastegar\LaravelPayments\Payments;
 use Illuminate\Support\ServiceProvider;

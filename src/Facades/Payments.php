@@ -1,5 +1,5 @@
 <?php
-namespace abolfazlrastegar\LaravelPayments\Facades;
+namespace Romero\LaravelPayments\Facades;
 use Illuminate\Support\Facades\Facade;
 
 class Payments extends Facade

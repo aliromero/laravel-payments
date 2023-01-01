@@ -1,6 +1,6 @@
 <?php
 
-namespace Abolfazlrastegar\LaravelPayments\Drivers;
+namespace Romero\LaravelPayments\Drivers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;

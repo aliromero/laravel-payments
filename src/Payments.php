@@ -1,6 +1,6 @@
 <?php
 
-namespace Abolfazlrastegar\LaravelPayments;
+namespace Romero\LaravelPayments;
 
 use Abolfazlrastegar\LaravelPayments\Exception\CreateErrorMessage;
 

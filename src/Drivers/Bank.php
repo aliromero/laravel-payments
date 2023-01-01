@@ -1,6 +1,6 @@
 <?php
 
-namespace Abolfazlrastegar\LaravelPayments\Drivers;
+namespace Romero\LaravelPayments\Drivers;
 
 interface Bank
 {
