@@ -42,15 +42,8 @@ class Zibal implements Bank
                 "trackId" => $params['trackId']
             ]);
         $response = json_decode($request->getBody()->getContents(), true);
+        return $response;
 
-
-        if(isset($response['result']) && $response['result'] == 100){
-            return $response;
-        }
-        return  [
-            'status' => false,
-            'message' => "پرداخت با شکست مواجه شد!"
-        ];
     }
 
     /**
