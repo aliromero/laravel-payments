@@ -22,7 +22,9 @@ class PayIr implements Bank
             return $response['errorMessage'];
         if ($api)
         {
-            return 'https://pay.ir/pg/' . $response['token'];
+            $response['payment_url'] = 'https://pay.ir/pg/' . $response['token'];
+            return $response;
+
         }
         header('Location:https://pay.ir/pg/' . $response['token']);exit();
     }

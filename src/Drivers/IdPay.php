@@ -23,7 +23,8 @@ class IdPay implements Bank
         }
         if ($api)
         {
-            return $response['link'];
+            $response['payment_url'] = $response['link'];
+            return $response;
         }
         header('Location:' . $response['link']);exit();
     }

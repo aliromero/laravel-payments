@@ -41,7 +41,8 @@ class Zarinpal implements Bank
         }
         if ($api)
         {
-            return $url['pay'] . $response['data']['authority'];
+            $response['payment_url'] = $url['pay'] . $response['data']['authority'];
+            return $response;
         }
         header('Location:'. $url['pay'] . $response['data']['authority']);exit();
     }
