@@ -62,6 +62,7 @@ class Zibal implements Bank
             "callbackUrl"=> $callbackURL,
             "amount"=> config('payments.currency') == 'rtt' ? $amount * 10 : $amount,
             "orderId"=> $info_user['orderId'],
+            "allowedCards"=> $info_user['allowedCards'],
             "mobile"=> $info_user['mobile']
         ];
     }
