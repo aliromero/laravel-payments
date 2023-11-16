@@ -5,7 +5,7 @@ namespace Romero\LaravelPayments\Drivers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
-class Zibal implements Bank
+class Paystar implements Bank
 {
     /**
      * send request Payment towards zibal
