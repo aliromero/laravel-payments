@@ -43,7 +43,7 @@ class Zibal implements Bank
             'sign' =>
                 hash_hmac(
                     'SHA512',
-                    $params['amount'] . '#' . $params['orderId'] . '#' . $params['allowedCard'] . '#' . $params['orderId'],
+                    $params['amount'] . '#' . $params['orderId'] . '#' . $params['allowedCards'][0] . '#' . $params['orderId'],
                     $this->settings->signKey
                 ),
             ]);
@@ -71,7 +71,7 @@ class Zibal implements Bank
             'sign' =>
                 hash_hmac(
                     'SHA512',
-                    $amount . '#' . $info_user['orderId'] . '#' . $info_user['allowedCard'] . '#' . $info_user['orderId'],
+                    $amount . '#' . $info_user['orderId'] . '#' . $info_user['allowedCards'][0] . '#' . $info_user['orderId'],
                     $this->settings->signKey
                 ),
         ];
