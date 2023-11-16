@@ -17,6 +17,7 @@ class Paystar implements Bank
     {
         $request = Http::withHeaders($this->setHeaders())
             ->post('https://core.paystar.ir/api/pardakht/create', $this->setParams($amount, $callbackURL, $info_user));
+        \Log::debug("paystar : " . json_encode($this->setHeaders()));
         $response = json_decode($request->getBody()->getContents(), true);
         if ($response['status'] !== 1) {
             return ['message' => $response['message'], 'code'   => $response['status']];
