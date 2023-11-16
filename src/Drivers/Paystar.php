@@ -47,7 +47,7 @@ class Paystar implements Bank
                 hash_hmac(
                     'SHA512',
                     $params['amount'] . '#' . $params['ref_num'] . '#' . $params['card_number'] . "#" . $params['tracking_code'],
-                    config('payments.drivers.Paystar.key')
+                    config('payments.drivers.Paystar.secret_key')
                 ),
             ]);
         $response = json_decode($request->getBody()->getContents(), true);
@@ -66,10 +66,7 @@ class Paystar implements Bank
      * @return array
      */
     private function setParams ($amount, $callbackURL, $info_user) {
-        \Log::debug(hash_hmac(
-            'SHA512',
-            $amount . '#' . $info_user['orderId'] . '#' . $callbackURL,config('payments.drivers.Paystar.key')
-        ));
+       
         return [
             "callback"=> $callbackURL,
             "amount"=> config('payments.currency') == 'rtt' ? $amount * 10 : $amount,
@@ -78,7 +75,7 @@ class Paystar implements Bank
             'sign' =>
                 hash_hmac(
                     'SHA512',
-                    $amount . '#' . $info_user['orderId'] . '#' . $callbackURL,config('payments.drivers.Paystar.key')
+                    $amount . '#' . $info_user['orderId'] . '#' . $callbackURL,config('payments.drivers.Paystar.secret_key')
                 ),
         ];
     }
