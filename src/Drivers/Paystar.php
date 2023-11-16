@@ -18,9 +18,9 @@ class Paystar implements Bank
         $request = Http::withHeaders($this->setHeaders())
             ->post('https://core.paystar.ir/api/pardakht/create', $this->setParams($amount, $callbackURL, $info_user));
         $response = json_decode($request->getBody()->getContents(), true);
-//        if ($response['status'] !== 1) {
-            return ['message' => 'test', 'code'   => $response['status']];
-//        }
+        if ($response['status'] !== 1) {
+            return ['message' => $response['message'], 'code'   => $response['status']];
+        }
         if ($api)
         {
             $response['payment_url'] = 'https://core.paystar.ir/api/pardakht/payment' . $response['data']['token'];
