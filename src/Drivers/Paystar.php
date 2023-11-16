@@ -43,8 +43,7 @@ class Paystar implements Bank
             'sign' =>
                 hash_hmac(
                     'SHA512',
-                    $params['amount'] . '#' . $params['orderId'] . '#' . $params['allowedCard'] . '#' . $params['orderId'],
-                    $this->settings->signKey
+                    $params['amount'] . '#' . $params['ref_num'] . '#' . $params['card_number'] . "#" . $params['tracking_code']
                 ),
             ]);
         $response = json_decode($request->getBody()->getContents(), true);
@@ -71,8 +70,7 @@ class Paystar implements Bank
             'sign' =>
                 hash_hmac(
                     'SHA512',
-                    $amount . '#' . $info_user['orderId'] . '#' . $info_user['allowedCard'] . '#' . $info_user['orderId'],
-                    $this->settings->signKey
+                    $amount . '#' . $info_user['orderId'] . '#' . $callbackURL
                 ),
         ];
     }
