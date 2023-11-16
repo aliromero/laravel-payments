@@ -84,7 +84,7 @@ class Paystar implements Bank
             'Accept: application/json',
             'charset: utf-8',
             'Content-Type: application/json',
-            'Authorization: Bearer ' . config('payments.drivers.Paystar.gatewayId'),
+            'Authorization: Bearer ' . config('payments.drivers.Paystar.key'),
         ];
     }
 
