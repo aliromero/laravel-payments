@@ -51,7 +51,10 @@ return [
             'key' => '',
             'status' => true
         ],
-
+        'Paystar' =>  [
+            'key' => '',
+            'status' => true
+        ],
         'PayIr' =>  [
             'key' => '',
             'status' => true
