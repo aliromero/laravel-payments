@@ -76,7 +76,7 @@ class Paystar implements Bank
             'sign' =>
                 hash_hmac(
                     'SHA512',
-                    $amount . '#' . $info_user['orderId'] . '#' . $callbackURL,config('payments.drivers.Paystar.secret_key')
+                    config('payments.currency') == 'rtt' ? $amount * 10 : $amount . '#' . $info_user['orderId'] . '#' . $callbackURL,config('payments.drivers.Paystar.secret_key')
                 ),
         ];
     }
