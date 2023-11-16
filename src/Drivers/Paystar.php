@@ -67,6 +67,7 @@ class Paystar implements Bank
      */
     private function setParams ($amount, $callbackURL, $info_user) {
        
+        \Log::debug(config('payments.drivers.Paystar.secret_key'));
         return [
             "callback"=> $callbackURL,
             "amount"=> config('payments.currency') == 'rtt' ? $amount * 10 : $amount,
