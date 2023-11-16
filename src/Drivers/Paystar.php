@@ -66,6 +66,10 @@ class Paystar implements Bank
      * @return array
      */
     private function setParams ($amount, $callbackURL, $info_user) {
+        \Log::debug(hash_hmac(
+            'SHA512',
+            $amount . '#' . $info_user['orderId'] . '#' . $callbackURL,config('payments.drivers.Paystar.key')
+        ));
         return [
             "callback"=> $callbackURL,
             "amount"=> config('payments.currency') == 'rtt' ? $amount * 10 : $amount,
